@@ -11,6 +11,7 @@
 </head>
 <body>
  <table  width="1000" height="700">
+ <tr><td><a href="<%=request.getContextPath()%>/324b/write">글쓰기</a></td></tr>
   <tr>
    <td>이름</td>
    <td>제목</td>
