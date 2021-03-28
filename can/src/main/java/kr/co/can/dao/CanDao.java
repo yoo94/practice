@@ -29,11 +29,15 @@ public interface CanDao {
 	public CanDto update3(String id);
 	public void update_ok3(CanDto cdto);
 	public void delete3(String id);
-	
-	
-	
-	
-	
+	//============0327==================
+	public void write_ok4(CanDto cdto);
+	public ArrayList<CanDto>list4();
+	public CanDto content4(String id);
+	public void readnum4(String id);
+	public CanDto update4(String id);
+	public void update_ok4(CanDto cdto);
+	public void delete4(String id);
+
 	
 	
 }
