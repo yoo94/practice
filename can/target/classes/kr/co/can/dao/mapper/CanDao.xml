@@ -99,6 +99,31 @@ update defboard set name=#{name},title=#{title},content=#{content}
 <delete id="delete4">
 delete from defboard where id=#{param1}
 </delete>
+<!-- =============0403===================== -->
+<insert id="write_ok5" parameterType="kr.co.can.dto.CanDto">
+insert into (name,title,content,writeday)
+ values (#{name},#{title},#{content},now())
+</insert>
+<select id="list5" resultType="kr.co.can.dto.CanDto">
+select * from defboard order by id desc;
+</select>
+<update id="readnum5" parameterType="kr.co.can.dto.CanDto">
+update defboard set readnum=readnum+1 WHERE id=#{param1}; 
+</update>
+<select id="content5" resultType="kr.co.can.dto.CanDto">
+select * from defboard where id=#{param1};
+</select>
+<delete id="delete5" parameterType="kr.co.can.dto.CanDto">
+delete from defboard where id=#{param1};
+</delete>
+<update id="update_ok5" parameterType="kr.co.can.dto.CanDto">
+update defboard set name=#{name},title=#{title},content=#{content}
+	where id=#{id}
+</update>
+
+
+
+
 
 
 </mapper>
