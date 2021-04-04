@@ -311,10 +311,63 @@ public String update_ok5(CanDto cdto,HttpServletRequest request) {
 	cdao.update_ok5(cdto);
 	return "redirect:/403b/content?id="+id;
 }
+//------------------------------------------0404----------------------------------
+@RequestMapping("404b/write")
+public String write6() {
+	return "404b/write";
+}
+@RequestMapping("404b/write_ok")
+public String write_ok6(CanDto cdto) {
+	CanDao cdao=sqlSession.getMapper(CanDao.class);
+	cdao.write_ok6(cdto);
+	return "redirect:/404b/list";
+}
+@RequestMapping("404b/list")
+public String list6(Model model) {
+	CanDao cdao=sqlSession.getMapper(CanDao.class);
+	ArrayList<CanDto>list=cdao.list6();
+	model.addAttribute("list",list);
+	return "404b/list";		
+}
 
+@RequestMapping("404b/readnum")
+public String readnum6(HttpServletRequest request) {
+	String id=request.getParameter("id");
+	CanDao cdao=sqlSession.getMapper(CanDao.class);
+	cdao.readnum6(id);
+	return "redirect:/404b/content?id="+id;
+}
 
-
-
+@RequestMapping("404b/content")
+public String content6(Model model,HttpServletRequest request) {
+	String id=request.getParameter("id");
+	CanDao cdao=sqlSession.getMapper(CanDao.class);
+	CanDto cdto=cdao.content6(id);
+	model.addAttribute("cdto",cdto);
+	return "404b/content";
+}
+@RequestMapping("404b/delete")
+public String delete6(HttpServletRequest request) {
+	String id=request.getParameter("id");
+	CanDao cdao=sqlSession.getMapper(CanDao.class);
+	cdao.delete6(id);
+	return "redirect:/404b/list";
+}
+@RequestMapping("404b/update")
+public String update6(Model model,HttpServletRequest request) {
+	String id=request.getParameter("id");
+	CanDao cdao=sqlSession.getMapper(CanDao.class);
+	CanDto cdto=cdao.content6(id);
+	model.addAttribute("cdto",cdto);
+	return "404b/update";
+}
+@RequestMapping("404b/update_ok")
+public String update_ok6(CanDto cdto,HttpServletRequest request) {
+	String id=request.getParameter("id");
+	CanDao cdao=sqlSession.getMapper(CanDao.class);
+	cdao.update_ok6(cdto);
+	return "redirect:/404b/content?id="+id;
+}
 
 
 

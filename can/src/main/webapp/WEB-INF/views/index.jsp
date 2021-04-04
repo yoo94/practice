@@ -12,6 +12,7 @@
  <a href="<%=request.getContextPath()%>/326b/list">326blist</a><p/>
  <a href="<%=request.getContextPath()%>/327b/list">327blist</a><p/>
  <a href="<%=request.getContextPath()%>/403b/list">403blist</a><p/>
+ <a href="<%=request.getContextPath()%>/404b/list">404blist</a><p/>
 
 </body>
 </html>
