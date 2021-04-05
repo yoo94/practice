@@ -150,13 +150,18 @@ values (#{name},#{title},#{content},now())
 select * from defboard order by id desc;
 </select>
 <update id="readnum7" parameterType="kr.co.can.dto.CanDto">
-update defboard set readnum=readnum+1
+update defboard set readnum=readnum+1 where id=#{param1}
 </update>
-<select id="content" resultType="kr.co.can.dto.CanDto">
+<select id="content7" resultType="kr.co.can.dto.CanDto">
 select * from defboard where id=#{param1}
 </select>
-
-
+<delete id="delete7" parameterType="kr.co.can.dto.CanDto">
+delete from defboard where id=#{param1}
+</delete>
+<update id="update_ok7" parameterType="kr.co.can.dto.CanDto">
+update defboard set name=#{name},title=#{title},content=#{content}
+where id=#{id}
+</update>
 
 
 

@@ -44,19 +44,20 @@ public interface CanDao {
 	public CanDto content5(String id);
 	public void delete5(String id);
 	public void update_ok5(CanDto cdto);
-	//============0403==================
+	//============0404==================
 	public void write_ok6(CanDto cdto);
 	public ArrayList<CanDto>list6();
 	public void readnum6(String id);
 	public CanDto content6(String id);
 	public void delete6(String id);
 	public void update_ok6(CanDto cdto);
-	//============0403==================
+	//============0405==================
 	public void write_ok7(CanDto cdto);
 	public ArrayList<CanDto>list7();
-	public CanDto readnum7(String id);
+	public void readnum7(String id);
 	public CanDto content7(String id);
-	
+	public void delete7(String id);
+	public void update_ok7(CanDto cdto);
 	
 	
 	

@@ -19,7 +19,7 @@
 <c:forEach items="${list }" var="cdto">
  <tr>
  	<td>${cdto.name}</td>
- 	<td><a href="<%=request.getContextPath()%>/405b/content?id=${cdto.id}">${cdto.title}</a></td>
+ 	<td><a href="<%=request.getContextPath()%>/405b/readnum?id=${cdto.id}">${cdto.title}</a></td>
  	<td>${cdto.writeday}</td>
  	<td>${cdto.readnum}</td>
  </tr>

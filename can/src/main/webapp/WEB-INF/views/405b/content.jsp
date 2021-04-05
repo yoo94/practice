@@ -30,8 +30,8 @@
   </tr>
   <tr>
     <td><a href="<%=request.getContextPath()%>/405b/list"> 목록</a></td>
-    <td><a href="<%=request.getContextPath()%>/405b/update">수정</a></td>
-    <td><a href="<%=request.getContextPath()%>/405b/delete">삭제</a></td>
+    <td><a href="<%=request.getContextPath()%>/405b/update?id=${cdto.id}">수정</a></td>
+    <td><a href="<%=request.getContextPath()%>/405b/delete?id=${cdto.id}">삭제</a></td>
   </tr>
  </table>
 </body>
