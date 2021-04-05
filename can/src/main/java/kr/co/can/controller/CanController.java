@@ -368,6 +368,62 @@ public String update_ok6(CanDto cdto,HttpServletRequest request) {
 	cdao.update_ok6(cdto);
 	return "redirect:/404b/content?id="+id;
 }
+//------------------------------------------0405----------------------------------
+@RequestMapping("405b/write")
+public String write7() {
+	return "405b/write";
+}
+@RequestMapping("405b/write_ok")
+public String write_ok7(CanDto cdto) {
+	CanDao cdao=sqlSession.getMapper(CanDao.class);
+	cdao.write_ok7(cdto);
+	return "redirect:/405b/list";
+}
+@RequestMapping("/405b/list")
+public String list7(Model model) {
+	CanDao cdao=sqlSession.getMapper(CanDao.class);
+	ArrayList<CanDto>list=cdao.list7();
+	model.addAttribute("list",list);
+	return "/405b/list";
+}
+@RequestMapping("405b/readnum")
+public String readnum7(Model model,HttpServletRequest request) {
+	String id=request.getParameter("id");
+	CanDao cdao=sqlSession.getMapper(CanDao.class);
+	CanDto cdto=cdao.readnum7(id);
+	model.addAttribute("cdto", cdto);
+	return "/405b/content";
+}
+
+@RequestMapping("/405b/content")
+public String content7(Model model,HttpServletRequest request) {
+	String id=request.getParameter("id");
+	CanDao cdao=sqlSession.getMapper(CanDao.class);
+	CanDto cdto=cdao.content7(id);
+	model.addAttribute("cdto", cdto);
+	return "/405b/content";
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
