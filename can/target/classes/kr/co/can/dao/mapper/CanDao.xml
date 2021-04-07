@@ -198,6 +198,10 @@ update defboard set readnum=readnum+1
 select * from defboard where id=#{param1}
 </select>
 <delete id="delete9" parameterType="kr.co.can.dto.CanDto">
-delete from defboard id=#{param1}
+delete from defboard where id=#{param1}
 </delete>
+<update id="update_ok9" parameterType="kr.co.can.dto.CanDto">
+update defboard set name=#{name},title=#{title},content=#{content}
+where id=${id}
+</update>
 </mapper>

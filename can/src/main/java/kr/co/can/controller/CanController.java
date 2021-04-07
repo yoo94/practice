@@ -521,9 +521,22 @@ public String delete9(HttpServletRequest request) {
 	return "redirect:/407b/list";
 
 }
-
-
-
+@RequestMapping("/407b/update")
+public String update9(Model model,HttpServletRequest request) {
+	String id=request.getParameter("id");
+	CanDao cdao=sqlSession.getMapper(CanDao.class);
+	CanDto cdto=cdao.content9(id);
+	model.addAttribute("cdto",cdto);
+	return "/407b/update";
+}
+@RequestMapping("/407b/update_ok")
+public String update_ok9(CanDto cdto,HttpServletRequest request) {
+	String id=request.getParameter("id");
+	CanDao cdao=sqlSession.getMapper(CanDao.class);
+	cdao.update_ok9(cdto);
+	return "redirect:/407b/content?id="+id;
+	
+}
 
 
 

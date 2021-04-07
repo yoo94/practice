@@ -10,6 +10,8 @@
 </head>
 <body>
 <table>
+ <tr><td><a href="<%=request.getContextPath()%>/407b/write">글쓰기</a></td></tr>
+
  <tr>
    <td>제목</td>
    <td>조회수</td>

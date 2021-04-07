@@ -71,4 +71,5 @@ public interface CanDao {
 	public void readnum9(String id);
 	public CanDto content9(String id);
 	public void delete9(String id);
+	public void update_ok9(CanDto cdto);
 }
