@@ -72,4 +72,12 @@ public interface CanDao {
 	public CanDto content9(String id);
 	public void delete9(String id);
 	public void update_ok9(CanDto cdto);
+	//============0408==================
+	public void write_ok10(CanDto cdto);
+	public ArrayList<CanDto>list10();
+	public void readnum10(String id);
+	public CanDto content10(String id);
+	public void delete10(String id);
+	public void update_ok10(CanDto cdto);
 }
+
