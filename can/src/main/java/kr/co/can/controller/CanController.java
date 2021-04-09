@@ -594,7 +594,65 @@ public String update_ok10(CanDto cdto,HttpServletRequest request) {
 	cdao.update_ok10(cdto);
 	return "redirect:/408b/content?id="+id;
 }
+//------------------------------------------0409----------------------------------
+@RequestMapping("/409b/write")
+public String write11() {
+	return "/409b/write";
+}
+@RequestMapping("/409b/write_ok")
+public String write_ok11(CanDto cdto) {
+	CanDao cdao=sqlSession.getMapper(CanDao.class);
+	cdao.write_ok11(cdto);
+	return "redirect:/409b/list";
+}
+@RequestMapping("/409b/list")
+public String list11(Model model) {
+	CanDao cdao=sqlSession.getMapper(CanDao.class);
+	ArrayList<CanDto>list=cdao.list11();
+	model.addAttribute("list",list);
+	return "/409b/list";
+}
+@RequestMapping("/409b/readnum")
+public String readnum11(HttpServletRequest request) {
+	String id=request.getParameter("id");
+	CanDao cdao=sqlSession.getMapper(CanDao.class);
+	cdao.readnum11(id);
+	return "redirect:/409b/content?id="+id;
+}
+@RequestMapping("/409b/content")
+public String content11(Model model,HttpServletRequest request) {
+	String id=request.getParameter("id");
+	CanDao cdao=sqlSession.getMapper(CanDao.class);
+	CanDto cdto=cdao.content11(id);
+	model.addAttribute("cdto",cdto);
+	return "/409b/content";
+}
+@RequestMapping("/409b/delete")
+public String delete11(HttpServletRequest request) {
+	String id=request.getParameter("id");
+	CanDao cdao=sqlSession.getMapper(CanDao.class);
+	cdao.delete10(id);
+	return "redirect:/409b/list";
+}
+@RequestMapping("/409b/update")
+public String update11(Model model,HttpServletRequest request) {
+	String id=request.getParameter("id");
+	CanDao cdao=sqlSession.getMapper(CanDao.class);
+	CanDto cdto=cdao.content11(id);
+	model.addAttribute("cdto",cdto);
+	return "/409b/update";
+}
+@RequestMapping("/409b/update_ok")
+public String update_ok11(CanDto cdto,HttpServletRequest request) {
+	String id=request.getParameter("id");
+	CanDao cdao=sqlSession.getMapper(CanDao.class);
+	cdao.update_ok11(cdto);
+	return "redirect:/409b/content?id="+id;
+	}
+
 
 
 
 }
+
+
