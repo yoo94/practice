@@ -11,7 +11,6 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.mysql.fabric.xmlrpc.base.Array;
 
 import kr.co.can.dao.CanDao;
 import kr.co.can.dto.CanDto;
@@ -649,10 +648,63 @@ public String update_ok11(CanDto cdto,HttpServletRequest request) {
 	cdao.update_ok11(cdto);
 	return "redirect:/409b/content?id="+id;
 	}
+//------------------------------------------0410----------------------------------
+@RequestMapping("/410b/write")
+public String write12() {
+	return "/410b/write";
+}
+@RequestMapping("/410b/write_ok")
+public String write_ok12(CanDto cdto) {
+	CanDao cdao=sqlSession.getMapper(CanDao.class);
+	cdao.write_ok12(cdto);
+	return "redirect:/410b/list";
+}
+@RequestMapping("/410b/list")
+public String list12(Model model) {
+	CanDao cdao=sqlSession.getMapper(CanDao.class);
+	ArrayList<CanDto>list=cdao.list12();
+	model.addAttribute("list",list);
+	return "/410b/list";
+}
 
+@RequestMapping("/410b/readnum")
+public String readnum12(HttpServletRequest request) {
+	String id=request.getParameter("id");
+	CanDao cdao=sqlSession.getMapper(CanDao.class);
+	cdao.readnum12(id);
+	return "redirect:/410b/content?id="+id;
+}
 
-
-
+@RequestMapping("/410b/content")
+public String content12(Model model, HttpServletRequest request) {
+	String id=request.getParameter("id");
+	CanDao cdao=sqlSession.getMapper(CanDao.class);
+	CanDto cdto=cdao.content12(id);
+	model.addAttribute("cdto",cdto);
+	return "/410b/content";
+}
+@RequestMapping("/410b/delete")
+public String delte12(HttpServletRequest request) {
+	String id=request.getParameter("id");
+	CanDao cdao=sqlSession.getMapper(CanDao.class);
+	cdao.delete12(id);
+	return "redirect:/410b/list";
+}
+@RequestMapping("410b/update")
+public String update12(Model model, HttpServletRequest request) {
+	String id=request.getParameter("id");
+	CanDao cdao=sqlSession.getMapper(CanDao.class);
+	CanDto cdto=cdao.content12(id);
+	model.addAttribute("cdto",cdto);
+	return "/410b/update";
+}
+@RequestMapping("/410b/update_ok")
+public String update_ok12(HttpServletRequest request,CanDto cdto) {
+	String id=request.getParameter("id");
+	CanDao cdao=sqlSession.getMapper(CanDao.class);
+	cdao.update_ok12(cdto);
+	return "redirect:/410b/content?id="+id;
+}
 }
 
 
