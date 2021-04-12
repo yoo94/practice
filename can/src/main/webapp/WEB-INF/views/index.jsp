@@ -1,12 +1,43 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+        <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+    
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<style>
+#first{
+ width:1000px;
+ height:40px;
+ margin:auto;
+}
+#first #left{
+ float:left;
+}
+
+#first #right{
+float:right;
+}
+</style>
 </head>
 <body>
+ <div id="first">
+  <div id="left"><a href="mypage">나의 페이지</a></div>
+  <div id="right">
+  <!-- 로그인 안햇을때 -->
+  <c:if test="${userid == null }">
+  <a href="login">로그인</a>
+  </c:if>
+    <!-- 로그인 햇을때 -->
+  <c:if test="${userid != null }">  
+  안녕하세요 ${name } 님! <a href="logout">//로그아웃</a>
+  </c:if>
+   </div>
+  
+  
+ </div>
  <a href="<%=request.getContextPath()%>/324b/list">324blist</a><p/>
  <a href="<%=request.getContextPath()%>/325b/list">325blist</a><p/>
  <a href="<%=request.getContextPath()%>/326b/list">326blist</a><p/>

@@ -4,9 +4,15 @@ import java.util.ArrayList;
 
 
 import kr.co.can.dto.CanDto;
+import kr.co.can.dto.MemberDto;
 
 public interface CanDao {
- 
+	//============login==================
+	public MemberDto login_ok(MemberDto mdto);
+	//회원가입
+	public void sub_ok(MemberDto mdto);
+	
+	//============0324==================
 	public void write_ok(CanDto cdto);
 	public ArrayList<CanDto>list();
 	public void readnum(String id);
