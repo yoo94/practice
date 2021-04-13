@@ -1,5 +1,7 @@
 package kr.co.can.controller;
 
+import java.io.PrintWriter;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
@@ -9,7 +11,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import kr.co.can.dao.CanDao;
+import kr.co.can.dao.MemberDao;
 import kr.co.can.dto.MemberDto;
 
 @Controller
@@ -24,8 +26,8 @@ public String login(Model model, HttpServletRequest request) {
 }
 @RequestMapping("login_ok")
 public String login_ok(MemberDto mdto, HttpSession session) {
-	CanDao cdao=sqlSession.getMapper(CanDao.class);
-	MemberDto mdto2=cdao.login_ok(mdto);
+	MemberDao mdao=sqlSession.getMapper(MemberDao.class);
+	MemberDto mdto2=mdao.login_ok(mdto);
 	if(mdto2==null){
 		return "redirect:/login?chk=1";
 	}else {
@@ -55,9 +57,16 @@ public String sub() {
 }
 @RequestMapping("sub_ok")
 public String sub_ok(MemberDto mdto) {
-	CanDao cdao=sqlSession.getMapper(CanDao.class);
-	cdao.sub_ok(mdto);
+	MemberDao mdao=sqlSession.getMapper(MemberDao.class);
+	mdao.sub_ok(mdto);
 	return "redirect:/login";
 }
 
+@RequestMapping("/userid_dupcheck")
+public void userid(HttpServletRequest request,PrintWriter out ) {
+	String userid=request.getParameter("userid");
+	MemberDao mdao=sqlSession.getMapper(MemberDao.class);
+	int n=mdao.get_userid_chk(userid);
+	out.print(n);//-> 자바스크립트의 responsetext로 간다.
+}
 }
