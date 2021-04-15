@@ -758,12 +758,62 @@ public String update_ok13(CanDto cdto,HttpServletRequest request) {
 	cdao.update_ok13(cdto);
 	return "redirect:/411b/content?id="+id;
 	}
+//------------------------------------------0415----------------------------------
+@RequestMapping("/415b/write")
+public String wirte14() {
+	return "/415b/write";
+}
+@RequestMapping("/415b/write_ok")
+public String wirte_ok14(CanDto cdto) {
+	CanDao cdao=sqlSession.getMapper(CanDao.class);
+	cdao.write_ok14(cdto);
+	return "redirect:/415b/list";
+}
+@RequestMapping("/415b/list")
+public String list14(Model model) {
+	CanDao cdao=sqlSession.getMapper(CanDao.class);
+	ArrayList<CanDto>list=cdao.list14();
+	model.addAttribute("list",list);
+	return "/415b/list";
+}
+@RequestMapping("/415b/readnum")
+public String readnum14(HttpServletRequest request) {
+	String id=request.getParameter("id");
+	CanDao cdao=sqlSession.getMapper(CanDao.class);
+	cdao.readnum14(id);
+	return "redirect:/415b/content?id="+id;
 
-
-
-
-
-
+}
+@RequestMapping("/415b/content")
+public String content14(HttpServletRequest request ,Model model) {
+	String id=request.getParameter("id");
+	CanDao cdao=sqlSession.getMapper(CanDao.class);
+	CanDto cdto=cdao.content14(id);
+	model.addAttribute("cdto",cdto);
+	return "/415b/content";
+}
+@RequestMapping("/415b/update")
+public String upadte14(HttpServletRequest request ,Model model) {
+	String id=request.getParameter("id");
+	CanDao cdao=sqlSession.getMapper(CanDao.class);
+	CanDto cdto=cdao.content14(id);
+	model.addAttribute("cdto",cdto);
+	return "/415b/update";
+}
+@RequestMapping("/415b/update_ok")
+public String update_ok14(CanDto cdto,HttpServletRequest request) {
+	String id=request.getParameter("id");
+	CanDao cdao=sqlSession.getMapper(CanDao.class);
+	cdao.update_ok14(cdto);
+	return "redirect:/415b/content?id="+id;
+}
+@RequestMapping("/415b/delete")
+public String delete14(HttpServletRequest request) {
+	String id=request.getParameter("id");
+	CanDao cdao=sqlSession.getMapper(CanDao.class);
+	cdao.delete14(id);
+	return "redirect:/415b/list";
+}
 
 
 
