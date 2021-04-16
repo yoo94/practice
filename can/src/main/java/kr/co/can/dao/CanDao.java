@@ -6,8 +6,6 @@ import java.util.ArrayList;
 import kr.co.can.dto.CanDto;
 
 public interface CanDao {
-
-	
 	//============0324==================
 	public void write_ok(CanDto cdto);
 	public ArrayList<CanDto>list();
@@ -110,5 +108,12 @@ public interface CanDao {
 	public CanDto content14(String id);
 	public void update_ok14(CanDto cdto);
 	public void delete14(String id);
+	//============0416==================
+	public void write_ok15(CanDto cdto);
+	public ArrayList<CanDto>list15();
+	public void readnum15(String id);
+	public CanDto content15(String id);
+	public void update_ok15(CanDto cdto);
+	public void delete15(String id);
 }
 

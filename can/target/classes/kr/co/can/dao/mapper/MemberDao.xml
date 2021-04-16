@@ -17,5 +17,5 @@ values(#{userid},#{pwd},#{name},#{email},#{phone},#{juso},#{sung},#{birth},now()
 <!-- 아이디 중복확인 -->
 <select id="get_userid_chk" resultType="Integer">
   select count(*) from member where userid=#{param1}
- </select>
+</select>
 </mapper>
