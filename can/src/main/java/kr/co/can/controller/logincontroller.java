@@ -95,14 +95,14 @@ public String login3() {
 	return "/member3/login";
 }
 @RequestMapping("/member3/login_ok")
-public String login3(MemberDto mdto,HttpSession session) {
+public String login_ok3(MemberDto mdto,HttpSession session) {
 	MemberDao mdao=sqlSession.getMapper(MemberDao.class);
 	MemberDto mdto2=mdao.login_ok3(mdto);
 	if(mdto2==null) {
 		return "redirect:/member3/login?chk=1";
 	}else {
-		session.setAttribute("userid", mdto2.getName());
-		session.setAttribute("pwd", mdto2.getPwd());
+		session.setAttribute("userid", mdto2.getUserid());
+		session.setAttribute("name", mdto2.getName());
 		return "redirect:/index";
 	}
 }
