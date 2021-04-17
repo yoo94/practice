@@ -869,10 +869,60 @@ public String delete15(HttpServletRequest request) {
 	cdao.delete15(id);
 	return "redirect:/416b/list";
 }
-
-
-
-
+//------------------------------------------0417----------------------------------
+@RequestMapping("/417b/write")
+public String write16() {
+	return "/417b/write";
 }
-
-
+@RequestMapping("/417b/write_ok")
+public String write_ok16(CanDto cdto) {
+	CanDao cdao=sqlSession.getMapper(CanDao.class);
+	cdao.write_ok16(cdto);
+	return "redirect:/417b/list";
+}
+@RequestMapping("/417b/list")
+public String list16(Model model) {
+	CanDao cdao=sqlSession.getMapper(CanDao.class);
+	ArrayList<CanDto>list=cdao.list16();
+	model.addAttribute("list",list);
+	return "/417b/list";
+}
+@RequestMapping("/417b/readnum")
+public String readnum16(HttpServletRequest request) {
+	String id = request.getParameter("id");
+	CanDao cdao=sqlSession.getMapper(CanDao.class);
+	cdao.readnum16(id);
+	return "redirect:/417b/content?id="+id;
+}
+@RequestMapping("/417b/content")
+public String content16(HttpServletRequest request,Model model) {
+	String id = request.getParameter("id");
+	CanDao cdao=sqlSession.getMapper(CanDao.class);
+	CanDto cdto=cdao.content16(id);
+	model.addAttribute("cdto",cdto);
+	return "/417b/content";
+}
+@RequestMapping("/417b/update")
+public String update16(HttpServletRequest request,Model model) {
+	String id = request.getParameter("id");
+	CanDao cdao=sqlSession.getMapper(CanDao.class);
+	CanDto cdto=cdao.content16(id);
+	model.addAttribute("cdto",cdto);
+	return "/417b/update";
+}
+@RequestMapping("/417b/update_ok")
+public String update_ok16(CanDto cdto,HttpServletRequest request) {
+	String id=request.getParameter("id");
+	CanDao cdao=sqlSession.getMapper(CanDao.class);
+	cdao.update_ok16(cdto);
+	return "redirect:/417b/content?id="+id;
+}
+@RequestMapping("/417b/delete")
+public String delete16(HttpServletRequest request) {
+	String id = request.getParameter("id");
+	CanDao cdao=sqlSession.getMapper(CanDao.class);
+	cdao.delete16(id);
+	return "redirect:/417b/list";
+}
+}
+	

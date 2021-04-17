@@ -30,11 +30,12 @@ float:right;
   <c:if test="${userid == null }">
   <a href="<%=request.getContextPath() %>/member1/login">로그인1</a>
   <a href="<%=request.getContextPath() %>/member2/login">로그인2</a>
+  <a href="<%=request.getContextPath() %>/member3/login">로그인3</a>
   로그인을 해주셔야 게시판 이용이 가능합니다.
   </c:if>
     <!-- 로그인 햇을때 -->
   <c:if test="${userid != null }">  
-  안녕하세요 ${name } 님! <a href="/logout">//로그아웃</a><p/>
+  안녕하세요 ${name } 님! <a href="<%=request.getContextPath() %>/logout">//로그아웃</a><p/>
  <a href="<%=request.getContextPath()%>/324b/list">324blist</a><p/>
  <a href="<%=request.getContextPath()%>/325b/list">325blist</a><p/>
  <a href="<%=request.getContextPath()%>/326b/list">326blist</a><p/>
@@ -50,6 +51,7 @@ float:right;
  <a href="<%=request.getContextPath()%>/411b/list">411blist</a><p/>
  <a href="<%=request.getContextPath()%>/415b/list">415blist</a><p/>
  <a href="<%=request.getContextPath()%>/416b/list">416blist</a><p/>
+ <a href="<%=request.getContextPath()%>/417b/list">417blist</a><p/>
   
   </c:if>
    </div>

@@ -67,7 +67,7 @@ public String login_ok(MemberDto mdto, HttpSession session) {
 	}
 }
 //logout
-@RequestMapping("/logout")
+@RequestMapping("logout")
 public String logout(HttpSession session) {
 	session.invalidate();
 	return "redirect:/index";
@@ -80,7 +80,7 @@ public String login2() {
 @RequestMapping("/member2/login_ok")
 public String login_ok2(MemberDto mdto,HttpSession session) {
 	MemberDao mdao=sqlSession.getMapper(MemberDao.class);
-	MemberDto mdto2=mdao.login_ok(mdto);
+	MemberDto mdto2=mdao.login_ok2(mdto);
 	if(mdto2==null){
 		return "redirect:/member2/login?chk=1";
 	}else {
@@ -89,7 +89,22 @@ public String login_ok2(MemberDto mdto,HttpSession session) {
 		return "redirect:/index";
 	}
 }
-
-
+//==============member3================
+@RequestMapping("/member3/login")
+public String login3() {
+	return "/member3/login";
+}
+@RequestMapping("/member3/login_ok")
+public String login3(MemberDto mdto,HttpSession session) {
+	MemberDao mdao=sqlSession.getMapper(MemberDao.class);
+	MemberDto mdto2=mdao.login_ok3(mdto);
+	if(mdto2==null) {
+		return "redirect:/member3/login?chk=1";
+	}else {
+		session.setAttribute("userid", mdto2.getName());
+		session.setAttribute("pwd", mdto2.getPwd());
+		return "redirect:/index";
+	}
+}
 
 }
