@@ -10,6 +10,8 @@
 </head>
 <body>
 <table>
+  <tr><td><a href="<%=request.getContextPath()%>/410b/write">글쓰기</a></td></tr>
+
 <tr>
 	<td>작성일</td>
 	<td>제목</td>

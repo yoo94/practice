@@ -11,5 +11,5 @@ public interface MemberDao {
 	public MemberDto login_ok(MemberDto mdto);
 	public MemberDto login_ok2(MemberDto mdto);
 	public MemberDto login_ok3(MemberDto mdto);
-	
+	public MemberDto login_ok4(MemberDto mdto);
 }

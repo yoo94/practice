@@ -924,5 +924,76 @@ public String delete16(HttpServletRequest request) {
 	cdao.delete16(id);
 	return "redirect:/417b/list";
 }
+//------------------------------------------0418----------------------------------
+
+@RequestMapping("/418b/write")
+public String write17() {
+	return "418b/write";
+}
+@RequestMapping("/418b/write_ok")
+public String write_ok17(CanDto cdto) {
+	CanDao cdao=sqlSession.getMapper(CanDao.class);
+	cdao.write_ok17(cdto);
+	return "redirect:/418b/list";
+}
+@RequestMapping("/418b/list")
+public String list17(Model model) {
+	CanDao cdao=sqlSession.getMapper(CanDao.class);
+	ArrayList<CanDto>list=cdao.list17();
+	model.addAttribute("list",list);
+	return "/418b/list";
+}
+@RequestMapping("/418b/readnum")
+public String readnum17(HttpServletRequest request) {
+	String id=request.getParameter("id");
+	CanDao cdao=sqlSession.getMapper(CanDao.class);
+	cdao.readnum17(id);
+	return "redirect:/418b/content?id="+id;
+}
+@RequestMapping("/418b/content")
+public String content(HttpServletRequest request,Model model) {
+	String id=request.getParameter("id");
+	CanDao cdao=sqlSession.getMapper(CanDao.class);
+	CanDto cdto=cdao.content17(id);
+	model.addAttribute("cdto",cdto);
+	return "/418b/content";
+}
+@RequestMapping("/418/delete")
+public String delete17(HttpServletRequest request) {
+	String id=request.getParameter("id");
+	CanDao cdao=sqlSession.getMapper(CanDao.class);
+	cdao.delete17(id);
+	return "redirect:/418b/list";
+}
+@RequestMapping("/418b/update")
+public String update17(HttpServletRequest request,Model model) {
+	String id=request.getParameter("id");
+	CanDao cdao=sqlSession.getMapper(CanDao.class);
+	CanDto cdto=cdao.content17(id);
+	model.addAttribute("cdto",cdto);
+	return "/418b/update";
+}
+@RequestMapping("418b/update_ok")
+public String update_ok17(CanDto cdto,HttpServletRequest request) {
+	String id=request.getParameter("id");
+	CanDao cdao=sqlSession.getMapper(CanDao.class);
+	cdao.update_ok17(cdto);
+	return "redirect:/418b/content?id="+id;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
 	

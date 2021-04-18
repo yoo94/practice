@@ -28,9 +28,10 @@ float:right;
   <div id="right">
   <!-- 로그인 안햇을때 -->
   <c:if test="${userid == null }">
-  <a href="<%=request.getContextPath() %>/member1/login">로그인1</a>
-  <a href="<%=request.getContextPath() %>/member2/login">로그인2</a>
-  <a href="<%=request.getContextPath() %>/member3/login">로그인3</a>
+  <a href="<%=request.getContextPath() %>/member1/login">로그인1</a><p/>
+  <a href="<%=request.getContextPath() %>/member2/login">로그인2</a><p/>
+  <a href="<%=request.getContextPath() %>/member3/login">로그인3</a><p/>
+  <a href="<%=request.getContextPath() %>/member4/login">로그인4</a><p/>
   로그인을 해주셔야 게시판 이용이 가능합니다.
   </c:if>
     <!-- 로그인 햇을때 -->
@@ -52,6 +53,7 @@ float:right;
  <a href="<%=request.getContextPath()%>/415b/list">415blist</a><p/>
  <a href="<%=request.getContextPath()%>/416b/list">416blist</a><p/>
  <a href="<%=request.getContextPath()%>/417b/list">417blist</a><p/>
+ <a href="<%=request.getContextPath()%>/418b/list">418blist</a><p/>
   
   </c:if>
    </div>
