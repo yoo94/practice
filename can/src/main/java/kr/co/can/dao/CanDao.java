@@ -129,7 +129,13 @@ public interface CanDao {
 	public CanDto content17(String id);
 	public void delete17(String id);
 	public void update_ok17(CanDto cdto);
-	
+	//============0419==================
+	public void write_ok18(CanDto cdto);
+	public ArrayList<CanDto>list18();
+	public void readnum18(String id);
+	public CanDto content18(String id);
+	public void delete18(String id);
+	public void update_ok18(CanDto cdto);
 	
 	
 	

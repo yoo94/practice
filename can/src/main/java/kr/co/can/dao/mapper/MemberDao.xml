@@ -26,7 +26,9 @@ select * from member where userid=#{userid} and pwd=#{pwd}
 <select id="login_ok4" parameterType="kr.co.can.dto.MemberDto" resultType="kr.co.can.dto.MemberDto">
 select * from member where userid=#{userid} and pwd=#{pwd}
 </select>
-
+<select id="login_ok5" parameterType="kr.co.can.dto.MemberDto" resultType="kr.co.can.dto.MemberDto">
+select * from member where userid=#{userid} and pwd=#{pwd}
+</select>
 
 
 
