@@ -118,11 +118,10 @@ public String login_ok4(MemberDto mdto,HttpSession session) {
 	if(mdto2==null) {
 		return "redirect:/member4/login";
 	}else {
-		session.setAttribute("userid",mdto2.getUserid());
-		session.setAttribute("name",mdto2.getName());
+		session.setAttribute("userid", mdto2.getUserid());
+		session.setAttribute("name", mdto2.getName());
 		return "redirect:/index";
 	}
-
 }
 //==============member5================
 @RequestMapping("/member5/login")
@@ -142,7 +141,23 @@ public String login_ok5(MemberDto mdto,HttpSession session) {
 	}
 	
 }
-
+//==============member6================
+@RequestMapping("/member6/login")
+public String login6() {
+	return "/member6/login";
+}
+@RequestMapping("/member6/login_ok")
+public String login_ok6(MemberDto mdto,HttpSession session) {
+	MemberDao mdao=sqlSession.getMapper(MemberDao.class);
+	MemberDto mdto2=mdao.login_ok6(mdto);
+	if(mdto2==null) {
+		return "redirect:/member6/login";
+	}else {
+		session.setAttribute("userid", mdto2.getUserid());
+		session.setAttribute("name", mdto2.getName());
+	}
+	return "redirect:/index";
+}
 
 
 

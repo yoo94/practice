@@ -33,6 +33,7 @@ float:right;
   <a href="<%=request.getContextPath() %>/member3/login">로그인3</a><p/>
   <a href="<%=request.getContextPath() %>/member4/login">로그인4</a><p/>
   <a href="<%=request.getContextPath() %>/member5/login">로그인5</a><p/>
+  <a href="<%=request.getContextPath() %>/member6/login">로그인6</a><p/>
   로그인을 해주셔야 게시판 이용이 가능합니다.
   </c:if>
     <!-- 로그인 햇을때 -->
@@ -56,6 +57,7 @@ float:right;
  <a href="<%=request.getContextPath()%>/417b/list">417blist</a><p/>
  <a href="<%=request.getContextPath()%>/418b/list">418blist</a><p/>
  <a href="<%=request.getContextPath()%>/419b/list">419blist</a><p/>
+ <a href="<%=request.getContextPath()%>/421b/list">421blist</a><p/>
   
   </c:if>
    </div>

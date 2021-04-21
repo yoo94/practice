@@ -1035,11 +1035,61 @@ public String update_ok18(CanDto cdto,HttpServletRequest request) {
 	cdao.update_ok18(cdto);
 	return "redirect:/419b/content?id="+id;
 }
-
-
-
-
-
+//------------------------------------------0421----------------------------------
+@RequestMapping("/421b/write")
+public String write19() {
+	return "/421b/write";
+}
+@RequestMapping("/421b/write_ok")
+public String write_ok19(CanDto cdto) {
+	CanDao cdao=sqlSession.getMapper(CanDao.class);
+	cdao.write_ok19(cdto);
+	return "redirect:/421b/list";
+}
+@RequestMapping("/421b/list")
+public String list19(Model model) {
+	CanDao cdao=sqlSession.getMapper(CanDao.class);
+	ArrayList<CanDto>list=cdao.list19();
+	model.addAttribute("list",list);
+	return "/421b/list";
+}
+@RequestMapping("/421b/readnum")
+public String readnum19(HttpServletRequest request) {
+	String id=request.getParameter("id");
+	CanDao cdao=sqlSession.getMapper(CanDao.class);
+	cdao.readnum19(id);
+	return "redirect:/421b/content?id="+id;
+}
+@RequestMapping("/421b/content")
+public String content19(HttpServletRequest request,Model model) {
+	String id=request.getParameter("id");
+	CanDao cdao=sqlSession.getMapper(CanDao.class);
+	CanDto cdto=cdao.content19(id);
+	model.addAttribute("cdto",cdto);
+	return "redirect:/421b/content";
+}
+@RequestMapping("/421b/delete")
+public String delete19(HttpServletRequest request) {
+	String id=request.getParameter("id");
+	CanDao cdao=sqlSession.getMapper(CanDao.class);
+	cdao.delete19(id);
+	return "redirect:/421b/list";
+}
+@RequestMapping("/421b/update")
+public String update(HttpServletRequest request,Model model) {
+	String id=request.getParameter("id");
+	CanDao cdao=sqlSession.getMapper(CanDao.class);
+	CanDto cdto=cdao.content19(id);
+	model.addAttribute("cdto",cdto);
+	return "/421b/update";
+}
+@RequestMapping("/421b/update_ok")
+public String update_ok19(CanDto cdto,HttpServletRequest request) {
+	String id=request.getParameter("id");
+	CanDao cdao=sqlSession.getMapper(CanDao.class);
+	cdao.update_ok19(cdto);
+	return "redirect:/421b/content?id="+id;
+}
 
 
 

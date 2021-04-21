@@ -13,4 +13,20 @@ public interface MemberDao {
 	public MemberDto login_ok3(MemberDto mdto);
 	public MemberDto login_ok4(MemberDto mdto);
 	public MemberDto login_ok5(MemberDto mdto);
+	public MemberDto login_ok6(MemberDto mdto);
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }
