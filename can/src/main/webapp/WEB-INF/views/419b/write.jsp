@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
- <form method="post" action="wirte_ok">
+ <form method="post" action="write_ok">
  	이름<input type="text" name="name"><p/>
 	제목<input type="text" name="title"><p/>
 	내용<textarea rows="30" cols="30" name="content"></textarea>

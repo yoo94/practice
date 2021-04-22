@@ -8,10 +8,10 @@
 </head>
 <body>
  <form method="post" action="write_ok">
- 	이름<input type="text" name="name"><p/>
-	제목<input type="text" name="title"><p/>
-	내용<textarea rows="30" cols="30" name="content"></textarea>
-	<button>입력</button>
+  <input type="text" name="name"><p/>
+  <input type="text" name="title"><p/>
+  <textarea rows="30" cols="30" name="content"></textarea><p/>
+  <button>입력</button>
  </form>
 </body>
 </html>

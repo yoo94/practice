@@ -32,7 +32,9 @@ select * from member where userid=#{userid} and pwd=#{pwd}
 <select id="login_ok6" parameterType="kr.co.can.dto.MemberDto" resultType="kr.co.can.dto.MemberDto">
 select * from member where userid=#{userid} and pwd=#{pwd}
 </select>
-
+<select id="login_ok7" parameterType="kr.co.can.dto.MemberDto" resultType="kr.co.can.dto.MemberDto">
+select * from member where userid=#{userid} and pwd=#{pwd}
+</select>
 
 
 

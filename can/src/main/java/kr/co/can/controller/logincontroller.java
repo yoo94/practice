@@ -158,8 +158,22 @@ public String login_ok6(MemberDto mdto,HttpSession session) {
 	}
 	return "redirect:/index";
 }
-
-
+//==============member7================
+@RequestMapping("/member7/login")
+public String login7() {
+	return "/member7/login";
+}
+public String login_ok7(MemberDto mdto,HttpSession session) {
+	MemberDao mdao=sqlSession.getMapper(MemberDao.class);
+	MemberDto mdto2=mdao.login_ok7(mdto);
+	if(mdto==null) {
+		return "redirect:/member7/login";
+	}else {
+		session.setAttribute("userid", mdto2.getUserid());
+		session.setAttribute("userid", mdto2.getName());
+		return "redirect:/index";
+	}
+}
 
 
 

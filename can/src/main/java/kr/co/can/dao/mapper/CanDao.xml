@@ -103,7 +103,7 @@ delete from defboard where id=#{param1}
 </delete>
 <!-- =============0403===================== -->
 <insert id="write_ok5" parameterType="kr.co.can.dto.CanDto">
-insert into (name,title,content,writeday)
+insert into defboard(name,title,content,writeday)
  values (#{name},#{title},#{content},now())
 </insert>
 <select id="list5" resultType="kr.co.can.dto.CanDto">
@@ -382,7 +382,7 @@ value(#{name},#{title},#{content},now())
 <select id="list18" resultType="kr.co.can.dto.CanDto">
 select * from defboard order by id desc
 </select>
-<update id="readunum18" parameterType="kr.co.can.dto.CanDto">
+<update id="readnum18" parameterType="kr.co.can.dto.CanDto">
 update defboard set readnum=readnum+1 where id=#{parma1}
 </update>
 <select id="content18" resultType="kr.co.can.dto.CanDto">

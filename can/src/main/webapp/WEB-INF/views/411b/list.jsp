@@ -10,7 +10,7 @@
 </head>
 <body>
  <table>
-  <tr><td><a href="<%=request.getContextPath()%>/410b/write">글쓰기</a></td></tr>
+  <tr><td><a href="<%=request.getContextPath()%>/411b/write">글쓰기</a></td></tr>
  
  <tr>
   <td>날짜</td>
