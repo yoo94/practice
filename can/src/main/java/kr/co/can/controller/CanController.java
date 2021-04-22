@@ -1090,9 +1090,61 @@ public String update_ok19(CanDto cdto,HttpServletRequest request) {
 	cdao.update_ok19(cdto);
 	return "redirect:/421b/content?id="+id;
 }
+//------------------------------------------0422----------------------------------
+@RequestMapping("/422b/write")
+public String write20() {
+	return "/422b/write";
+}
+@RequestMapping("/422b/write_ok")
+public String write_ok20(CanDto cdto) {
+	CanDao cdao=sqlSession.getMapper(CanDao.class);
+	cdao.write_ok20(cdto);
+	return "redirect:/422b/list";
+}
+@RequestMapping("/422b/list")
+public String list20(Model model) {
+	CanDao cdao=sqlSession.getMapper(CanDao.class);
+	ArrayList<CanDto>list=cdao.list20();
+	model.addAttribute("list",list);
+	return "/422b/list";
+}
+@RequestMapping("/422b/readnum")
+public String readnum20(HttpServletRequest request) {
+	CanDao cdao=sqlSession.getMapper(CanDao.class);
+	String id=request.getParameter("id");
+	cdao.readnum20(id);
+	return "redirect:/422b/content?id="+id;
+}
+@RequestMapping("/422b/content")
+public String content20(HttpServletRequest request,Model model) {
+	CanDao cdao=sqlSession.getMapper(CanDao.class);
+	String id=request.getParameter("id");
+	CanDto cdto=cdao.content20(id);
+	model.addAttribute("cdto",cdto);
+	return "redirect:/422b/content?id="+id;
+}
+@RequestMapping("/422b/delete")
+public String delete20(HttpServletRequest request) {
+	CanDao cdao=sqlSession.getMapper(CanDao.class);
+	String id=request.getParameter("id");
+	cdao.delete20(id);
+	return "redirect:/422b/list";
+}
+@RequestMapping("/422b/update")
+public String update20(HttpServletRequest request,Model model) {
+	CanDao cdao=sqlSession.getMapper(CanDao.class);
+	String id=request.getParameter("id");
+	CanDto cdto=cdao.content20(id);
+	model.addAttribute("cdto",cdto);
+	return "/422b/update";
+}
+@RequestMapping("/422b/update_ok")
+public String update_ok20(CanDto cdto,HttpServletRequest request) {
+	CanDao cdao=sqlSession.getMapper(CanDao.class);
+	String id=request.getParameter("id");
+	cdao.update_ok20(cdto);
+	return "redirect:/422b/content?id="+id;
 
-
-
-
+}
 }
 	
